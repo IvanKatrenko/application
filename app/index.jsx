@@ -1,6 +1,7 @@
 import { Text, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { Link } from "expo-router";
+import 'expo-router/entry';
 
 export default function App() {
     return (
