@@ -9,7 +9,8 @@ export default function App() {
          justify-center bg-gray-900">
             <Text className="text-2xl text-white font-bold">Root Layout</Text>
             <StatusBar style="auto" />
-            <Link href="/profile" style={{ color: "red" }}>go to Profile</Link>
+            <Link href="/home" style={{ color: "red" }}>go to
+                Home</Link>
         </View>
     );
 };
