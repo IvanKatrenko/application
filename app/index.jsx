@@ -30,13 +30,26 @@ export default function App() {
                         <Text className="text-3xl text-white font-bold 
                         text-center">
                             Discover Endless Possibilities with
-                            Our App
+                            {" "}
 
                             <Text classname="text-secondary-200">
                                 Aora
                             </Text>
                         </Text>
+                        <Image
+                            source={images.path}
+                            className="w-[136px] h-[15px]
+                                absolute bottom-2 right-8"
+                            resizeMode="contain"
+                        />
+
                     </View>
+                    <Text className="text-sm font-pregular
+                    text-gray-100 mt-7 text-center">
+                        Where creativity meets innovation:
+                        embark on a journey of limitless exploration
+                        with Aora
+                    </Text>
                 </View>
 
             </ScrollView>
