@@ -1,9 +1,10 @@
 import { Text, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import { Link } from "expo-router";
+import { Redirect, router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ScrollView } from "react-native-web";
 import { images } from "../constants";
+import CustomButton from "../components/CustomButton";
 
 export default function App() {
     return (
@@ -13,7 +14,7 @@ export default function App() {
                 height: "100%"
             }}>
                 <View className="flex-1 items-center justify-center 
-                h-full px-4">
+                min-h-[85vh] px-4">
                     <Image
                         source={images.logo}
                         resizeMode="contain"
@@ -50,9 +51,22 @@ export default function App() {
                         embark on a journey of limitless exploration
                         with Aora
                     </Text>
+
+                    <CustomButton
+                        title="Continue with Email"
+                        handlePress={() => router.push("/sign-in")}
+                        containerStyles="mt-10 mt-7"
+                    />
+
                 </View>
 
             </ScrollView>
+
+            <StatusBar
+                backgroundColor='#161622'
+                style="light"
+            />
+
         </SafeAreaView>
     );
 };
