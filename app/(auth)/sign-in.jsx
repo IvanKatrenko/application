@@ -5,6 +5,7 @@ import { ScrollView } from 'react-native-web'
 
 import { images } from '../../constants'
 import FormField from '../../components/FormField'
+import CustomButton from '../../components/CustomButton'
 
 
 const SignIn = () => {
@@ -39,6 +40,12 @@ const SignIn = () => {
                         handleChangeText={(text) =>
                             setForm({ ...form, password: e })}
                         otherStyles="mt-7"
+                    />
+
+                    <CustomButton
+                        title="Log In"
+                        handlePress={() => console.log(form)}
+                        containerStyles="mt-7"
                     />
 
                 </View>
