@@ -3,6 +3,7 @@ import React from 'react'
 import { Tabs, Redirect } from 'expo-router'
 
 import { icons } from '../../constants'
+import { Image } from 'react-native';
 
 const TabIcon = ({ icon, color, name, focused }) => {
     return (
@@ -103,4 +104,5 @@ const TabsLayout = () => {
     )
 }
 
-export default TabsLayout
+export default TabsLayout;
+

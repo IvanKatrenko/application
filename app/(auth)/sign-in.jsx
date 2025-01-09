@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Text, View } from 'react-native-web'
 import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { ScrollView } from 'react-native-web'
@@ -7,6 +7,7 @@ import { images } from '../../constants'
 import FormField from '../../components/FormField'
 import CustomButton from '../../components/CustomButton'
 import { Link } from 'expo-router'
+
 
 
 const SignIn = () => {
@@ -73,5 +74,5 @@ const SignIn = () => {
     )
 }
 
-export default SignIn
+export default SignIn;
 
