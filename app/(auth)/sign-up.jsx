@@ -7,6 +7,8 @@ import FormField from "../../components/FormField";
 import CustomButton from "../../components/CustomButton";
 import { Link } from "expo-router";
 
+import { createUser } from "../../lib/appwrite";
+
 const SignUp = () => {
   const [form, setForm] = useState({
     username: "",
@@ -16,7 +18,9 @@ const SignUp = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const submit = () => {};
+  const submit = () => {
+    createUser();
+  };
 
   return (
     <SafeAreaView className="flex-1 items-center justify-center">
@@ -61,7 +65,7 @@ const SignUp = () => {
           />
 
           <CustomButton
-            title="Log In"
+            title="Sign Up"
             handlePress={submit}
             containerStyles="mt-7"
             isLoading={isSubmitting}
