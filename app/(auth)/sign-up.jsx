@@ -18,8 +18,22 @@ const SignUp = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const submit = () => {
-    createUser();
+  const submit = async () => {
+    if (!form.username || !form.email || !form.password) {
+      Alert.aler('Error', 'Please enter all the required fields');
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const result = await createUser(form.email, form.password,
+        form.username)
+      //set it to global state...
+    } catch (error) {
+      Alert.alert('Error', error.message);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
