@@ -14,7 +14,7 @@ const GlobalProvider = ({ children }) => {
     const [isLoading, setIsLoading] = useState(true); // state to check if data is loading
 
     useEffect(() => {
-        getCurrentUse
+        getCurrentUser()
             .then((res) => {
                 if (res) {
                     setIsLoggedIn(true);
@@ -49,3 +49,5 @@ const GlobalProvider = ({ children }) => {
         </GlobalContext.Provider>
     )
 }
+
+export default GlobalProvider

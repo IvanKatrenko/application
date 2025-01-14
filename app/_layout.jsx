@@ -3,6 +3,8 @@ import { SplashScreen, Stack } from 'expo-router';
 import { useFonts } from 'expo-font';
 import { useEffect } from 'react';
 
+import GlobalProvider from '../context/GlobalContext';
+
 SplashScreen.preventAutoHideAsync();
 
 const RooyLayout = () => {
@@ -24,10 +26,14 @@ const RooyLayout = () => {
     }
 
     return (
-        <Stack>
-            <Stack.Screen name="index" options={{ headerShown: false }} />
-            <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
-        </Stack>
+        <GlobalProvider>
+            <Stack>
+                <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+                <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+                <Stack.Screen name="index" options={{ headerShown: false }} />
+                <Stack.Screen name="search/[query]" options={{ headerShown: false }} />
+            </Stack>
+        </GlobalProvider >
 
         // <>
         //     <Text>Header</Text>
