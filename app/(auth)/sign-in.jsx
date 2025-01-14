@@ -6,6 +6,9 @@ import { ScrollView } from "react-native-web";
 import FormField from "../../components/FormField";
 import CustomButton from "../../components/CustomButton";
 import { Link } from "expo-router";
+import { signIn } from "../../lib/appwrite";
+
+import { signIn } from "../../lib/appwrite";
 
 const SignIn = () => {
   const [form, setForm] = useState({
@@ -16,7 +19,25 @@ const SignIn = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const submit = () => {};
+  const submit = async () => {
+    if (!form.email || !form.password) {
+      Alert.aler('Error', 'Please enter all the required fields');
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      await signIn(form.email, form.password)
+
+      //set it to global state...
+
+      router.replace('/home')
+    } catch (error) {
+      Alert.alert('Error', error.message);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <SafeAreaView className="flex-1 items-center justify-center">
