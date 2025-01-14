@@ -5,7 +5,14 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { ScrollView } from "react-native-web";
 import CustomButton from "../components/CustomButton";
 
+import { useGlobalContext } from "../context/GlobalContext";
+import { Image } from "react-native";
+
 export default function App() {
+  const { isLoading, isLoggedIn } = useGlobalContext();
+
+  if (!isLoading && !isLoggedIn) return <Redirect href="/home" /> // redirect to home page
+
   return (
     <SafeAreaView
       className="flex-1 items-center
