@@ -4,7 +4,8 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { FlatList } from 'react-native-web'
 
 import { images } from '../../constans'
-
+import { Trending } from '../../components/Trending'
+import { SearchInput } from '../../components/SearchInput'
 
 const Home = () => {
     return (
@@ -50,6 +51,9 @@ const Home = () => {
                              text-white-100 font-pregular">
                                 Latest Video
                             </Text>
+                                // horizontal position video on the page
+                            <Trending posts={[{ id: 1 }, { id: 2 },
+                            { id: 3 }] ?? []} />
 
                         </View>
 
