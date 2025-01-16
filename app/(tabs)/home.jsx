@@ -44,6 +44,15 @@ const Home = () => {
 
                         <SearchInput />
 
+                        // third sector (video)
+                        <View className="mt-1.5 w-full h-[300px]">
+                            <Text className="font-pbold text-2xl
+                             text-white-100 font-pregular">
+                                Latest Video
+                            </Text>
+
+                        </View>
+
                     </View>
 
                 )

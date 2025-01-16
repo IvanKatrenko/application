@@ -26,7 +26,7 @@ const SearchInput = ({
             <TextInput
                 className="text-base mt-0.5 text-white flex-1 font-pregular"
                 value={value}
-                plaxheolder={placeholder}
+                plaxheolder='Search for a movie topic'
                 placeholderTextColor="gray-400"
                 onChangeText={handleChangeText}
                 secureTextEntry={title === "Password" && !showPassword}
