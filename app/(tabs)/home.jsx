@@ -40,8 +40,10 @@ const Home = () => {
                                     resizeMode="contain"
                                 />
                             </View>
-
                         </View>
+
+                        <SearchInput />
+
                     </View>
 
                 )
