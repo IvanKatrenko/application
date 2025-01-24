@@ -6,13 +6,22 @@ import { FlatList } from 'react-native-web'
 import { images } from '../../constans'
 import { Trending } from '../../components/Trending'
 import { SearchInput } from '../../components/SearchInput'
+import EmptyState from '../../components/EmptyState'
 
 const Home = () => {
+
+    const [refreshing, setRefreshing] = useState(false);
+
+    const onRefresh = async () => {
+        setRefreshing(true);
+        setRefreshing(false);
+    }
+
     return (
-        <SafeAreaView className="bg-primary">
+        <SafeAreaView className="bg-primary
+        h-full">
             <FlatList
-                // data={[{ id: 1 }, { id: 2 }, { id: 3 },]}
-                data={[]}
+                data={[{ id: 1 }, { id: 2 }, { id: 3 },]}
                 keyExtractor={(item) => item.id}
                 renderItem={(item) => (
                     <Text className="text-red-500 text-3xl text-white">
@@ -62,8 +71,14 @@ const Home = () => {
 
                 )}
                 ListEmptyComponent={() => (
-                    <Text className="text-red-500 text-3xl text-white">Empty</Text>
+                    <EmptyState
+                        title="No video found"
+                        subtitile="Try searching for something else" />
                 )}
+                refreshControl={<RefreshControl
+                    refreshing={refreshing}
+                    onRefresh={onRefresh}
+                />}
             />
         </SafeAreaView >
     )
