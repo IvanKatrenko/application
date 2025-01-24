@@ -11,7 +11,8 @@ const Home = () => {
     return (
         <SafeAreaView className="bg-primary">
             <FlatList
-                data={[{ id: 1 }, { id: 2 }, { id: 3 }]}
+                // data={[{ id: 1 }, { id: 2 }, { id: 3 },]}
+                data={[]}
                 keyExtractor={(item) => item.id}
                 renderItem={(item) => (
                     <Text className="text-red-500 text-3xl text-white">
@@ -59,8 +60,10 @@ const Home = () => {
 
                     </View>
 
-                )
-                }
+                )}
+                ListEmptyComponent={() => (
+                    <Text className="text-red-500 text-3xl text-white">Empty</Text>
+                )}
             />
         </SafeAreaView >
     )
